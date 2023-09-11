@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Category from "./components/Category.jsx"
 
 const API_URL = "https://api.magicthegathering.io/v1/cards";
 
@@ -29,6 +30,7 @@ const CardList = () => {
     console.log(filteredCards)
 
     setCards(filteredCards);
+    setSearchTerm("");
   };
 
   useEffect(() => {
@@ -37,6 +39,7 @@ const CardList = () => {
 
   return (
     <div>
+      <Category />
       <form
         onSubmit={(e) => {
           e.preventDefault();
